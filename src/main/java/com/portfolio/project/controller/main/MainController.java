@@ -1,24 +1,23 @@
 package com.portfolio.project.controller.main;
 
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
 @Controller
+/* 임시 코드 삭제 수정 OK */
 public class MainController {
 
     @GetMapping("/main/home")
-    public String logSuccess(HttpServletRequest request){
-        //로그인 성공 핸들러에서 Attr에 저장한 세션 정보 가져오기 
-        log.info("SESSION : "+request.getSession().getAttribute("user"));
-        log.info("LOGIN ID : " + request.getSession().getAttribute("name"));
-        //SecurityContextHolder로 가져오기
-        //  SecurityContext는 현재 스레드와 관련된 보안정보를 정의
-        log.info("NAME : "+SecurityContextHolder.getContext().getAuthentication().getName());
+    public String logSuccess(HttpServletRequest request,Model model){
+
+        model.addAttribute("Dummy","Dummy_Data");
 
         return "user/home";
     }
