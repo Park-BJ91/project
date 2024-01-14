@@ -23,3 +23,5 @@ spring:
 #Mybatis
 mybatis:
   mapper-locations: mybatis/mapper/**/*.xml
+
+#GITIGNORE TEST
